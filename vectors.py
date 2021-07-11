@@ -1,4 +1,5 @@
 import numpy
+import numpy as np
 
 class Vector2:
     coords = numpy.array([0, 0])
@@ -62,6 +63,10 @@ class Vector2:
             self[i] = int(round(self[i]))
         return self
 
+    def normalize(self):
+        self.coords = self.coords / numpy.linalg.norm(self.coords)
+        return self
+
 class Vector3(Vector2):
     coords = numpy.array([0, 0, 0])
 
@@ -70,6 +75,13 @@ class Vector3(Vector2):
             self.coords = numpy.array([round(x), round(y), round(z)])
         else:
             self.coords = numpy.array([float(x), float(y), float(z)])
+            
+    def __str__(self) -> str:
+        return "[" + str(self.coords[0]) + ", " + str(self.coords[1]) + ", " + str(self.coords[2]) + "]"
+
+    def cross(self, other):
+        self.coords = numpy.cross(self.coords, other.coords)
+        return self
 
 class Vector4(Vector3):
     coords = numpy.array([0, 0, 0, 0])
@@ -111,6 +123,14 @@ def vector_with_array(array: numpy.ndarray) -> Vector2:
         return v4
     else:
         raise ValueError("array length does not match")
+
+def euler_to_quaternion(yaw, pitch, roll):
+        qx = np.sin(roll/2) * np.cos(pitch/2) * np.cos(yaw/2) - np.cos(roll/2) * np.sin(pitch/2) * np.sin(yaw/2)
+        qy = np.cos(roll/2) * np.sin(pitch/2) * np.cos(yaw/2) + np.sin(roll/2) * np.cos(pitch/2) * np.sin(yaw/2)
+        qz = np.cos(roll/2) * np.cos(pitch/2) * np.sin(yaw/2) - np.sin(roll/2) * np.sin(pitch/2) * np.cos(yaw/2)
+        qw = np.cos(roll/2) * np.cos(pitch/2) * np.cos(yaw/2) + np.sin(roll/2) * np.sin(pitch/2) * np.sin(yaw/2)
+
+        return [qx, qy, qz, qw]
 
 class static:
     v3_one = Vector3(1, 1, 1)

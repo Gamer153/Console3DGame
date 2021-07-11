@@ -25,3 +25,5 @@ class Object:
         if linalg.norm(cam.position.coords) <= linalg.norm(self.position.coords):
             pos = cam.world_to_screen(self.position)
             cam.display.set_pixel(pos, self.block)
+            with open("pos.txt", "a") as f:
+                f.write("obj id " + str(self.id) + " with pos " + str(self.position) + " told to render at " + str(pos) + "\n")
