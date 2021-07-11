@@ -1,6 +1,8 @@
 import os
 from time import sleep
+
 from vectors import Vector2
+
 
 class Display:
     _pixels = list()

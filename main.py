@@ -1,14 +1,18 @@
-from player import Player
-from object import Object
-from world import World
-from camera import Camera
-import os, importlib, pip
+import importlib
+import os
 from time import sleep
 
+import pip
+
+from camera import Camera
 from display import Display
 from game import Game
 from kbhit import KBHit
+from object import Object
+from player import Player
 from vectors import Vector2, Vector3
+from world import World
+
 
 def install(module):
     try:

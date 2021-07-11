@@ -1,6 +1,7 @@
+from camera import Camera
 from vectors import Vector2, Vector3, vector2_to_vector3
 from world import World
-from camera import Camera
+
 
 class Player:
     _world: World = None

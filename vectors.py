@@ -1,6 +1,7 @@
 import numpy
 import numpy as np
 
+
 class Vector2:
     coords = numpy.array([0, 0])
 

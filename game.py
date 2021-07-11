@@ -1,11 +1,12 @@
-from player import Player
-from time import sleep
-from world import World
-from vectors import Vector2
-from camera import Camera
-from kbhit import KBHit
-from display import Display
 import threading
+from time import sleep
+
+from camera import Camera
+from display import Display
+from kbhit import KBHit
+from player import Player
+from vectors import Vector2
+from world import World
 
 
 class Game:

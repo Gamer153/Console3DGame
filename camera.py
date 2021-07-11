@@ -1,8 +1,12 @@
 from os import altsep
-from numpy import cos, sin
+
 import numpy
+from numpy import cos, sin
+
 from display import Display
-from vectors import Matrix4x4, Vector2, Vector3, Vector4, static, vector2_to_vector3, vector3_to_vector2, vector3_to_vector4, vector4_to_vector3, vector_with_array
+from vectors import (Matrix4x4, Vector2, Vector3, Vector4, static,
+                     vector2_to_vector3, vector3_to_vector2,
+                     vector3_to_vector4, vector4_to_vector3, vector_with_array)
 
 
 class Camera:

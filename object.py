@@ -1,8 +1,11 @@
-from vectors import Vector2, Vector3, static
-from display import Display
-from camera import Camera
 import random
+
 from numpy import linalg
+
+from camera import Camera
+from display import Display
+from vectors import Vector2, Vector3, static
+
 
 class Object:
     position = Vector3()
